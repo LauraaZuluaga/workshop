@@ -28,4 +28,8 @@ export class Empleado extends Persona {
     trabajar(horas: number): string {
         return `Cantidad de horas trabajadas en el dia: ${horas}.`
     }
+
+    override saludar(): string {
+        return `Persona: Su nombre es ${this.nombre} y tiene ${this.getEdad()} años. Su salario es de ${this.salario} dolares.`;
+    }
 }
