@@ -21,3 +21,5 @@ console.log(persona7.saludar());
 console.log(persona8.saludar());
 console.log(persona9.saludar());
 console.log(persona10.saludar());
+
+console.log("Su edad es: ", persona1.getEdad());

@@ -2,7 +2,7 @@
 
 export class Persona {
     nombre: string;
-    edad: number;
+    private edad: number;
 
     constructor(nombre: string, edad: number) {
         this.nombre = nombre;
@@ -11,5 +11,9 @@ export class Persona {
 
     saludar(): string {
         return `Persona: Su nombre es ${this.nombre} y tiene ${this.edad} años.`;
+    }
+
+    getEdad(): number {
+        return this.edad;
     }
 }
