@@ -17,3 +17,15 @@ export class Persona {
         return this.edad;
     }
 }
+
+export class Empleado extends Persona {
+    salario: number;
+    constructor(nombre: string, edad: number, salario: number) {
+        super(nombre, edad)
+        this.salario = salario;
+    }
+
+    trabajar(horas: number): string {
+        return `Cantidad de horas trabajadas en el dia: ${horas}.`
+    }
+}

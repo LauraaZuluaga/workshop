@@ -1,4 +1,5 @@
 import { Persona } from "./Persona";
+import { Empleado } from "./Persona"
 
 const persona1 = new Persona("Laura", 18);
 const persona2 = new Persona("Andrea", 20);
@@ -23,3 +24,6 @@ console.log(persona9.saludar());
 console.log(persona10.saludar());
 
 console.log("Su edad es: ", persona1.getEdad());
+
+const empleado1 = new Empleado("Juan", 40, 500000);
+console.log(empleado1.trabajar(8));
