@@ -1,50 +1,138 @@
 import { Persona } from "./Persona";
 import { Empleado } from "./Persona"
 
-const persona1 = new Persona("Laura", 18);
-const persona2 = new Persona("Andrea", 20);
-const persona3 = new Persona("Sara", 30);
-const persona4 = new Persona("Andres", 21);
-const persona5 = new Persona("Alba", 55);
-const persona6 = new Persona("Sonia", 47);
-const persona7 = new Persona("Lina", 25);
-const persona8 = new Persona("Cristina", 13);
-const persona9 = new Persona("Estefania", 40);
-const persona10 = new Persona("Aurora", 67);
+const persona1 = new Persona("Laura", 18, {
+    calle: "5048",
+    ciudad: "Cali",
+    pais: "Colombia",
+});
 
-console.log(persona1.saludar());
-console.log(persona2.saludar());
-console.log(persona3.saludar());
-console.log(persona4.saludar());
-console.log(persona5.saludar());
-console.log(persona6.saludar());
-console.log(persona7.saludar());
-console.log(persona8.saludar());
-console.log(persona9.saludar());
-console.log(persona10.saludar());
+const persona2 = new Persona("Andrea", 20, {
+    calle: "1000",
+    ciudad: "Medellin",
+    pais: "Colombia",
+});
+
+const persona3 = new Persona("Sara", 30, {
+    calle: "200",
+    ciudad: "Buenos Aires",
+    pais: "Argentina",
+});
+
+const persona4 = new Persona("Andres", 21, {
+    calle: "305",
+    ciudad: "Quito",
+    pais: "Ecuador",
+});
+
+const persona5 = new Persona("Alba", 5, {
+    calle: "450",
+    ciudad: "Madrid",
+    pais: "España",
+});
+
+const persona6 = new Persona("Sonia", 7, {
+    calle: "204",
+    ciudad: "Bogotá",
+    pais: "Colombia",
+});
+
+const persona7 = new Persona("Lina", 2, {
+    calle: "78",
+    ciudad: "Ciudad de México",
+    pais: "México",
+});
+
+const persona8 = new Persona("Cristina", 30, {
+    calle: "912",
+    ciudad: "Santiago",
+    pais: "Chile",
+});
+
+const persona9 = new Persona("Estefania", 19, {
+    calle: "33",
+    ciudad: "Lima",
+    pais: "Perú",
+});
+
+const persona10 = new Persona("Aurora", 67, {
+    calle: "1220",
+    ciudad: "Montevideo",
+    pais: "Uruguay",
+});
+
+const personas = [persona1, persona2, persona3, persona4, persona5, persona6, persona7, persona8, persona9, persona10];
+
+for (let i = 0; i < personas.length; i++) {
+    console.log(personas[i].imprimirCiudad())
+    
+}
 
 console.log("Su edad es: ", persona1.getEdad());
 
-const empleado1 = new Empleado("Juan", 40, 500000);
-console.log(empleado1.trabajar(8));
+const empleado1 = new Empleado("Juan", 40, 500000, {
+    calle: "548",
+    ciudad: "Medellin",
+    pais: "Colombia",
+});
 
-const empleado2 = new Empleado ("Anderson", 19, 50000);
-const empleado3 = new Empleado ("Camila", 29, 10000);
-const empleado4 = new Empleado ("Sara", 20, 15000);
-const empleado5 = new Empleado ("Estefania", 30, 20000);
-const empleado6 = new Empleado ("Andrea", 15, 100);
-const empleado7 = new Empleado ("Manuela", 60, 5000);
-const empleado8 = new Empleado ("Constanza", 70, 40000);
-const empleado9 = new Empleado ("Wendy", 27, 18000);
-const empleado10 = new Empleado ("Sonia", 40, 2000);
+const empleado2 = new Empleado("Anderson", 19, 50000, {
+    calle: "100",
+    ciudad: "Medellin",
+    pais: "Colombia",
+});
 
-console.log(empleado1.saludar());
-console.log(empleado2.saludar());
-console.log(empleado3.saludar());
-console.log(empleado4.saludar());
-console.log(empleado5.saludar());
-console.log(empleado6.saludar());
-console.log(empleado7.saludar());
-console.log(empleado8.saludar());
-console.log(empleado9.saludar());
-console.log(empleado10.saludar());
+const empleado3 = new Empleado("Camila", 29, 10000, {
+    calle: "299",
+    ciudad: "Medellin",
+    pais: "Colombia",
+});
+
+const empleado4 = new Empleado("Sara", 20, 15000, {
+    calle: "204",
+    ciudad: "San José",
+    pais: "Costa Rica",
+});
+
+const empleado5 = new Empleado("Estefania", 30, 20000, {
+    calle: "1001",
+    ciudad: "Asunción",
+    pais: "Paraguay",
+});
+
+const empleado6 = new Empleado("Andrea", 15, 100, {
+    calle: "102",
+    ciudad: "Caracas",
+    pais: "Venezuela",
+});
+
+const empleado7 = new Empleado("Manuela", 60, 5000, {
+    calle: "450",
+    ciudad: "La Paz",
+    pais: "Bolivia",
+});
+
+const empleado8 = new Empleado("Constanza", 70, 40000, {
+    calle: "1234",
+    ciudad: "Brasilia",
+    pais: "Brasil",
+});
+
+const empleado9 = new Empleado("Wendy", 27, 18000, {
+    calle: "567",
+    ciudad: "Panamá",
+    pais: "Panamá",
+});
+
+const empleado10 = new Empleado("Sonia", 40, 2000, {
+    calle: "890",
+    ciudad: "Guatemala",
+    pais: "Guatemala",
+});
+
+const empleados = [empleado1, empleado2, empleado3, empleado4, empleado5, empleado6, empleado7, empleado8, empleado9, empleado10];
+
+for(let i = 0; i < empleados.length; i++) {
+    console.log(empleados[i].imprimirCiudad());
+}
+
