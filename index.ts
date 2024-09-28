@@ -140,7 +140,7 @@ const empleado10 = new Empleado("Sonia", 40, 2000, {
     pais: "Guatemala",
 });
 
-const empleados = [empleado1, empleado2, empleado3, empleado4, empleado5, empleado6, empleado7, empleado8, empleado9, empleado10];
+export const empleados = [empleado1, empleado2, empleado3, empleado4, empleado5, empleado6, empleado7, empleado8, empleado9, empleado10];
 
 for(let i = 0; i < empleados.length; i++) {
     console.log(empleados[i].imprimirCiudad());
@@ -155,4 +155,9 @@ console.log(coche1.arrancar());
 const moto1 = new Moto("klx", "250");
 console.log(moto1.informacion());
 console.log(moto1.arrancar());
+
+empleados.forEach((empleado) => {
+    console.log(JSON.stringify(empleado));
+});
+
 
