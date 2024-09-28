@@ -4,11 +4,13 @@ export class Persona {
     nombre: string;
     private edad: number;
     direccion: Direccion;
+    vehiculos: Vehiculo[];
 
-    constructor(nombre: string, edad: number, direccion: Direccion) {
+    constructor(nombre: string, edad: number, direccion: Direccion, vehiculos: Vehiculo[] = []) {
         this.nombre = nombre;
         this.edad = edad;
         this.direccion = direccion;
+        this.vehiculos = vehiculos;
     }
 
     public saludar(): string {
@@ -22,13 +24,26 @@ export class Persona {
     imprimirCiudad(): string {
         return `La ciudad de residencia de ${this.nombre} es: ${this.direccion.ciudad}`
     }
+
+    public agregarVehiculo(vehiculo: Vehiculo): void {
+        this.vehiculos.push(vehiculo);
+    }
+    
+    
+    public mostrarVehiculos(): void {
+        console.log(`${this.nombre} tiene los siguientes vehículos:`);
+        this.vehiculos.forEach((vehiculo, index) => {
+            console.log(`Vehículo ${index + 1}: ${vehiculo.informacion()}`);
+            console.log(vehiculo.arrancar());
+        });
+    }
 }
 
 export class Empleado extends Persona {
     salario: number;
 
-    constructor(nombre: string, edad: number, salario: number, direccion: Direccion) {
-        super(nombre, edad, direccion)
+    constructor(nombre: string, edad: number, salario: number, direccion: Direccion, vehiculos: Vehiculo[] = []) {
+        super(nombre, edad, direccion, vehiculos);
         this.salario = salario;
     }
 
@@ -76,4 +91,7 @@ export class Moto extends Vehiculo {
         return `La moto está arrancando`
     }
 }
+
+
+
 

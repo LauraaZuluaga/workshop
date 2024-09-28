@@ -1,12 +1,17 @@
-import { Persona } from "./Persona";
+import { Persona, Vehiculo } from "./Persona";
 import { Empleado } from "./Persona";
 import { saludarPersona, jsonDatosPersona } from "./util"
+import { Coche, Moto } from "./Persona";
 
 const persona1 = new Persona("Laura", 18, {
     calle: "5048",
     ciudad: "Cali",
     pais: "Colombia",
 });
+
+persona1.agregarVehiculo (new Coche("Chevrolet", "2002"))
+persona1.agregarVehiculo(new Coche("Honda", "2019"))
+persona1.mostrarVehiculos();
 
 const persona2 = new Persona("Andrea", 20, {
     calle: "1000",
@@ -74,8 +79,12 @@ console.log("Su edad es: ", persona1.getEdad());
 const empleado1 = new Empleado("Juan", 40, 500000, {
     calle: "548",
     ciudad: "Medellin",
-    pais: "Colombia",
-});
+    pais: "Colombia"}
+);
+
+empleado1.agregarVehiculo (new Coche("Chevrolet", "Spark"))
+empleado1.agregarVehiculo(new Coche("Honda", "2016"))
+empleado1.mostrarVehiculos();
 
 const empleado2 = new Empleado("Anderson", 19, 50000, {
     calle: "100",
@@ -137,9 +146,6 @@ for(let i = 0; i < empleados.length; i++) {
     console.log(empleados[i].imprimirCiudad());
 };
 
-import { Vehiculo } from "./Persona";
-import { Coche } from "./Persona";
-import { Moto } from "./Persona";
 
 const coche1 = new Coche("Toyota", "corolla");
 console.log(coche1.informacion());
@@ -149,3 +155,4 @@ console.log(coche1.arrancar());
 const moto1 = new Moto("klx", "250");
 console.log(moto1.informacion());
 console.log(moto1.arrancar());
+
