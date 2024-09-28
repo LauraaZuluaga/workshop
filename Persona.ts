@@ -11,7 +11,7 @@ export class Persona {
         this.direccion = direccion;
     }
 
-    saludar(): string {
+    public saludar(): string {
         return `Persona: Su nombre es ${this.nombre} y tiene ${this.edad} años.`;
     }
 
@@ -45,5 +45,35 @@ interface Direccion {
     calle?: string;
     ciudad: string;
     pais?: string;
+}
+
+export abstract class Vehiculo {
+    constructor(public marca: string, public modelo: string) {}
+
+    abstract arrancar(): String;
+
+    public informacion(): string {
+        return `Marca: ${this.marca}, Modelo: ${this.modelo}`;
+    }
+}
+
+export class Coche extends Vehiculo {
+    constructor(marca: string, modelo: string) {
+        super(marca, modelo);
+    }
+
+    public arrancar(): string {
+        return `El coche está arrancando.`
+    }
+}
+
+export class Moto extends Vehiculo {
+    constructor(marca: string, modelo: string) {
+        super(marca, modelo)
+    }
+
+    public arrancar(): string {
+        return `La moto está arrancando`
+    }
 }
 
