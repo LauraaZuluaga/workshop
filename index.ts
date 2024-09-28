@@ -1,5 +1,6 @@
 import { Persona } from "./Persona";
-import { Empleado } from "./Persona"
+import { Empleado } from "./Persona";
+import { saludarPersona, jsonDatosPersona } from "./util"
 
 const persona1 = new Persona("Laura", 18, {
     calle: "5048",
@@ -134,5 +135,17 @@ const empleados = [empleado1, empleado2, empleado3, empleado4, empleado5, emplea
 
 for(let i = 0; i < empleados.length; i++) {
     console.log(empleados[i].imprimirCiudad());
-}
+};
 
+import { Vehiculo } from "./Persona";
+import { Coche } from "./Persona";
+import { Moto } from "./Persona";
+
+const coche1 = new Coche("Toyota", "corolla");
+console.log(coche1.informacion());
+console.log(coche1.arrancar());
+
+
+const moto1 = new Moto("klx", "250");
+console.log(moto1.informacion());
+console.log(moto1.arrancar());
