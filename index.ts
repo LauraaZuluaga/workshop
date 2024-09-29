@@ -2,70 +2,92 @@ import { Persona, Vehiculo } from "./Persona";
 import { Empleado } from "./Persona";
 import { saludarPersona, jsonDatosPersona } from "./util"
 import { Coche, Moto } from "./Persona";
+import { EstadoCivil } from "./Persona"
 
 const persona1 = new Persona("Laura", 18, {
     calle: "5048",
     ciudad: "Cali",
-    pais: "Colombia",
-});
+    pais: "Colombia"},
+    [],
+    EstadoCivil.SOLTERO
+);
 
-persona1.agregarVehiculo (new Coche("Chevrolet", "2002"))
-persona1.agregarVehiculo(new Coche("Honda", "2019"))
+persona1.agregarVehiculo(new Coche("Chevrolet", "2002"));
+persona1.agregarVehiculo(new Coche("Honda", "2019"));
 persona1.mostrarVehiculos();
 
 const persona2 = new Persona("Andrea", 20, {
     calle: "1000",
-    ciudad: "Medellin",
-    pais: "Colombia",
-});
+    ciudad: "Medellín",
+    pais: "Colombia"},
+    [],
+    EstadoCivil.CASADO
+);
 
 const persona3 = new Persona("Sara", 30, {
     calle: "200",
     ciudad: "Buenos Aires",
-    pais: "Argentina",
-});
+    pais: "Argentina"},
+    [],
+    EstadoCivil.SOLTERO
+);
 
 const persona4 = new Persona("Andres", 21, {
     calle: "305",
     ciudad: "Quito",
-    pais: "Ecuador",
-});
+    pais: "Ecuador"},
+    [],
+    EstadoCivil.SOLTERO
+);
 
 const persona5 = new Persona("Alba", 5, {
     calle: "450",
     ciudad: "Madrid",
-    pais: "España",
-});
+    pais: "España"},
+    [],
+    EstadoCivil.SOLTERO
+);
 
 const persona6 = new Persona("Sonia", 7, {
     calle: "204",
     ciudad: "Bogotá",
-    pais: "Colombia",
-});
+    pais: "Colombia"},
+    [],
+    EstadoCivil.SOLTERO
+);
 
 const persona7 = new Persona("Lina", 2, {
     calle: "78",
     ciudad: "Ciudad de México",
-    pais: "México",
-});
+    pais: "México"},
+    [],
+    EstadoCivil.SOLTERO
+);
 
 const persona8 = new Persona("Cristina", 30, {
     calle: "912",
     ciudad: "Santiago",
-    pais: "Chile",
-});
+    pais: "Chile"},
+    [],
+    EstadoCivil.SOLTERO
+);
 
 const persona9 = new Persona("Estefania", 19, {
     calle: "33",
     ciudad: "Lima",
-    pais: "Perú",
-});
+    pais: "Perú"},
+    [],
+    EstadoCivil.SOLTERO
+);
 
 const persona10 = new Persona("Aurora", 67, {
     calle: "1220",
     ciudad: "Montevideo",
-    pais: "Uruguay",
-});
+    pais: "Uruguay"},
+    [],
+    EstadoCivil.SOLTERO
+);
+
 
 const personas = [persona1, persona2, persona3, persona4, persona5, persona6, persona7, persona8, persona9, persona10];
 
@@ -79,7 +101,9 @@ console.log("Su edad es: ", persona1.getEdad());
 const empleado1 = new Empleado("Juan", 40, 500000, {
     calle: "548",
     ciudad: "Medellin",
-    pais: "Colombia"}
+    pais: "Colombia"},
+    [],
+    EstadoCivil.DIVORCIADO
 );
 
 empleado1.agregarVehiculo (new Coche("Chevrolet", "Spark"))
@@ -88,57 +112,59 @@ empleado1.mostrarVehiculos();
 
 const empleado2 = new Empleado("Anderson", 19, 50000, {
     calle: "100",
-    ciudad: "Medellin",
-    pais: "Colombia",
-});
+    ciudad: "Medellín",
+    pais: "Colombia"
+}, [], EstadoCivil.SOLTERO);
 
 const empleado3 = new Empleado("Camila", 29, 10000, {
     calle: "299",
-    ciudad: "Medellin",
-    pais: "Colombia",
-});
+    ciudad: "Medellín",
+    pais: "Colombia"
+}, [], EstadoCivil.DIVORCIADO);
 
 const empleado4 = new Empleado("Sara", 20, 15000, {
     calle: "204",
     ciudad: "San José",
-    pais: "Costa Rica",
-});
+    pais: "Costa Rica"
+}, [], EstadoCivil.SOLTERO);
 
-const empleado5 = new Empleado("Estefania", 30, 20000, {
+const empleado5 = new Empleado("Estefanía", 30, 20000, {
     calle: "1001",
     ciudad: "Asunción",
-    pais: "Paraguay",
-});
+    pais: "Paraguay"
+}, [], EstadoCivil.CASADO);
 
 const empleado6 = new Empleado("Andrea", 15, 100, {
     calle: "102",
     ciudad: "Caracas",
-    pais: "Venezuela",
-});
+    pais: "Venezuela"
+}, [], EstadoCivil.SOLTERO);
 
 const empleado7 = new Empleado("Manuela", 60, 5000, {
     calle: "450",
     ciudad: "La Paz",
-    pais: "Bolivia",
-});
+    pais: "Bolivia"
+}, [], EstadoCivil.DIVORCIADO);
 
 const empleado8 = new Empleado("Constanza", 70, 40000, {
     calle: "1234",
     ciudad: "Brasilia",
-    pais: "Brasil",
-});
+    pais: "Brasil"},
+    [], 
+    EstadoCivil.CASADO);
 
 const empleado9 = new Empleado("Wendy", 27, 18000, {
     calle: "567",
     ciudad: "Panamá",
-    pais: "Panamá",
-});
+    pais: "Panamá"
+}, [], EstadoCivil.SOLTERO);
 
 const empleado10 = new Empleado("Sonia", 40, 2000, {
     calle: "890",
     ciudad: "Guatemala",
-    pais: "Guatemala",
-});
+    pais: "Guatemala"
+}, [], EstadoCivil.DIVORCIADO);
+
 
 export const empleados = [empleado1, empleado2, empleado3, empleado4, empleado5, empleado6, empleado7, empleado8, empleado9, empleado10];
 
@@ -156,8 +182,6 @@ const moto1 = new Moto("klx", "250");
 console.log(moto1.informacion());
 console.log(moto1.arrancar());
 
-empleados.forEach((empleado) => {
-    console.log(JSON.stringify(empleado));
-});
+
 
 

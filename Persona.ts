@@ -1,16 +1,24 @@
 
 
+export enum EstadoCivil {
+    SOLTERO,
+    CASADO,
+    DIVORCIADO
+}
+
 export class Persona {
     nombre: string;
     private edad: number;
     direccion: Direccion;
     vehiculos: Vehiculo[];
+    estadoCivil: EstadoCivil;
 
-    constructor(nombre: string, edad: number, direccion: Direccion, vehiculos: Vehiculo[] = []) {
+    constructor(nombre: string, edad: number, direccion: Direccion, vehiculos: Vehiculo[] = [], estadoCivil: EstadoCivil) {
         this.nombre = nombre;
         this.edad = edad;
         this.direccion = direccion;
         this.vehiculos = vehiculos;
+        this.estadoCivil = estadoCivil;
     }
 
     public saludar(): string {
@@ -42,9 +50,10 @@ export class Persona {
 export class Empleado extends Persona {
     salario: number;
 
-    constructor(nombre: string, edad: number, salario: number, direccion: Direccion, vehiculos: Vehiculo[] = []) {
-        super(nombre, edad, direccion, vehiculos);
+    constructor(nombre: string, edad: number, salario: number, direccion: Direccion, vehiculos: Vehiculo[] = [], estadoCivil: EstadoCivil) {
+        super(nombre, edad, direccion, vehiculos, estadoCivil);
         this.salario = salario;
+        this.estadoCivil = estadoCivil; 
     }
 
     trabajar(horas: number): string {
