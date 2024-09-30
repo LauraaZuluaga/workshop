@@ -1,8 +1,8 @@
 import { Persona, Vehiculo } from "./Persona";
 import { Empleado } from "./Persona";
-import { saludarPersona, jsonDatosPersona } from "./util"
 import { Coche, Moto } from "./Persona";
 import { EstadoCivil } from "./Persona"
+import { Empresa } from "./Empresa"
 
 const persona1 = new Persona("Laura", 18, {
     calle: "5048",
@@ -183,5 +183,26 @@ console.log(moto1.informacion());
 console.log(moto1.arrancar());
 
 
+const empleado11 = new Empleado("Laura", 25, 700, { calle: "123", ciudad: "Bogotá", pais: "Colombia" }, [], EstadoCivil.SOLTERO);
+const empleado12 = new Empleado("Sara", 25, 700, { calle: "456", ciudad: "Bogotá", pais: "Colombia" }, [], EstadoCivil.SOLTERO);
+const empleado13 = new Empleado("Juan", 30, 800, { calle: "789", ciudad: "Cali", pais: "Colombia" }, [], EstadoCivil.CASADO);
+const empleado14 = new Empleado("Pedro", 28, 600, { calle: "321", ciudad: "Medellín", pais: "Colombia" }, [], EstadoCivil.SOLTERO);
+const empleado15 = new Empleado("Ana", 27, 900, { calle: "654", ciudad: "Cartagena", pais: "Colombia" }, [], EstadoCivil.CASADO);
+const empleado16 = new Empleado("Luis", 35, 750, { calle: "987", ciudad: "Barranquilla", pais: "Colombia" }, [], EstadoCivil.SOLTERO);
 
+const miEmpresa = new Empresa();
 
+miEmpresa.agregarEmpleado(empleado11);
+miEmpresa.agregarEmpleado(empleado12);
+miEmpresa.agregarEmpleado(empleado13);
+miEmpresa.agregarEmpleado(empleado14);
+miEmpresa.agregarEmpleado(empleado15);
+miEmpresa.agregarEmpleado(empleado16);
+
+console.log(miEmpresa.obtenerEmpleados());
+
+const empleadoEliminado = (miEmpresa.eliminarEmpleado(empleado16));
+console.log("Empleado eliminado:", empleadoEliminado)
+
+const totalSalarios = miEmpresa.calcularSalario();
+console.log("Total de los salario es: ", totalSalarios)
