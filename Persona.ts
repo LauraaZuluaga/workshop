@@ -1,4 +1,4 @@
-
+import { Proyecto } from "./proyecto";
 
 export enum EstadoCivil {
     SOLTERO,
@@ -49,11 +49,13 @@ export class Persona {
 
 export class Empleado extends Persona {
     salario: number;
+    proyectosAsignados: Proyecto[];
 
     constructor(nombre: string, edad: number, salario: number, direccion: Direccion, vehiculos: Vehiculo[] = [], estadoCivil: EstadoCivil) {
         super(nombre, edad, direccion, vehiculos, estadoCivil);
         this.salario = salario;
         this.estadoCivil = estadoCivil; 
+        this.proyectosAsignados = [];
     }
 
     trabajar(horas: number): string {
@@ -61,7 +63,15 @@ export class Empleado extends Persona {
     }
 
     override saludar(): string {
-        return `Persona: Su nombre es ${this.nombre} y tiene ${this.getEdad()} años. Su salario es de ${this.salario} dolares.`;
+        return `Empleado: Su nombre es ${this.nombre} y tiene ${this.getEdad()} años. Su salario es de ${this.salario} dolares.`;
+    }
+
+    public asignarProyecto(proyecto: Proyecto): void {
+        this.proyectosAsignados.push(proyecto);
+    }
+
+    public obtenerProyectosAsignados(): Proyecto[] {
+        return this.proyectosAsignados;
     }
 }
 

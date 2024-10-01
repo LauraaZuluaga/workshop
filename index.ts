@@ -3,6 +3,7 @@ import { Empleado } from "./Persona";
 import { Coche, Moto } from "./Persona";
 import { EstadoCivil } from "./Persona"
 import { Empresa } from "./Empresa"
+import { Proyecto } from "./proyecto";
 
 const persona1 = new Persona("Laura", 18, {
     calle: "5048",
@@ -206,3 +207,13 @@ console.log("Empleado eliminado:", empleadoEliminado)
 
 const totalSalarios = miEmpresa.calcularSalario();
 console.log("Total de los salario es: ", totalSalarios)
+
+const proyecto1 = new Proyecto("Aplicación para celulares")
+const proyecto2 = new Proyecto("Videojuego")
+
+proyecto1.asignarEmpleado(empleado1);
+proyecto1.asignarEmpleado(empleado2);
+
+proyecto2.asignarEmpleado(empleado2);
+
+console.log("Empleados asignados al proyecto 1: ", proyecto1.empleadosAsignados)
