@@ -4,6 +4,7 @@ import { Coche, Moto } from "./Persona";
 import { EstadoCivil } from "./Persona"
 import { Empresa } from "./Empresa"
 import { Proyecto } from "./proyecto";
+import { Departamento } from "./Departamento";
 
 const persona1 = new Persona("Laura", 18, {
     calle: "5048",
@@ -216,4 +217,18 @@ proyecto1.asignarEmpleado(empleado2);
 
 proyecto2.asignarEmpleado(empleado2);
 
-console.log("Empleados asignados al proyecto 1: ", proyecto1.empleadosAsignados)
+console.log("Empleados asignados al proyecto 1: ", proyecto1.empleadosAsignados);
+console.log("Empleados asignados al proyecto 2: ", proyecto2.empleadosAsignados);
+
+const empleado17 = new Empleado("Juan", 30, 5000, { calle: "100", ciudad: "Medellín", pais: "Colombia" }, [], 0)
+const empleado18 = new Empleado("David", 30, 5000, { calle: "100", ciudad: "Medellín", pais: "Colombia" }, [], 0)
+const departamentoTI = new Departamento("Departamento tecnologico")
+
+departamentoTI.agregarEmpleado(empleado17);
+departamentoTI.agregarEmpleado(empleado18);
+
+departamentoTI.listarEmpleados();
+
+departamentoTI.eliminarEmpleado(empleado18);
+
+departamentoTI.listarEmpleados();
